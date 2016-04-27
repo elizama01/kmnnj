@@ -8,52 +8,86 @@ package inventarioprincipal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 /**
  *
  * @author Esteban
  */
 public class Inventario {
     ArrayList<Computador>armado;
+  
     public Inventario() {
- armado=new ArrayList<Computador>();
-    
+ armado=new ArrayList<>(armado);
+  
     }
     
+    public void agregarArray(Computador c1){
+        armado.add(c1);
+    }
+    public void IngresoDatos( ){
     
-    public void menu(){
-     
-    }
-      public void listaRam(){
-     System.out.println("1° Ram");
-     int ram1 = (int) 18.000;
-        System.out.println ("Ram dd3 ,1866,2 GB = 18.000 ");
-        int  Ram2=(int) 32.000;
-          System.out.println("Ram dd4 ,1866,2 GB =32.000 ");
-       System.out.println("");
-    }
-    public void listaProcesador(){
-     System.out.println("2° Procesador");
-        String cpu1=("AMD® APU A4 7300 / Radeon R3 (FM2+) = 39.000 ");
-        String cpu2=("AMD® APU A10  / Radeon R5 (FM2+)=  100.000");
-       System.out.println("");
-    }
-    public void listaAlmacenamiento(){
-     System.out.println("2° Procesador");
-        String disco1=("Seagate® Disco Duro 500GB Sata3 7200 rpm 16MB Barracuda=49.990");
-        String disco2=("Seagate® Disco Duro 1TB Sata3 7200 rpm 16MB Barracuda=70.000");
-       System.out.println("");
-    }
-    public void listaTajetaVIdeo(){
-     System.out.println("2° Procesador");
-        String tVideo=("Nvidia x2 PCI 3.0 2 GB =49.990");
-        String tvideo=("Nvidia x3 PCI 3.0 4 GB =80.990");
-        System.out.println("");
-    }
-    public void listaGabinete(){
-     System.out.println("2° Procesador");
-        String Gabinete=("Gabinete 1 fuente de poder 500w = 15.000");
-        String Gabinete2=("Gabinete 1 fuente de poder 650w = 30.000");
-        
-        System.out.println("");}
    
-}
+   int cantidad;   
+  
+      try {  
+          Scanner entrada =new Scanner(System.in);
+          System.out.println("indique  la cantidad de computadores que va a ingresar ");
+          cantidad=entrada.nextInt();
+         
+          for (int j = 0; j < cantidad; j++) {
+              
+          System.out.println("Ingrese el computador N°"+j);
+          System.out.println("ingrese nombre de la ram");
+          String nameram = entrada.next() ;
+          System.out.println("ingrese valor de la ram");
+        int  ValorRam=entrada.nextInt() ;
+       
+        Ram ram=new Ram(nameram, ValorRam);
+       
+        System.out.println("ingrese nombre del procesador");
+        String nameprocesador=entrada.next() ;
+        System.out.println("ingrese valor del procesador");
+        int  ValorProcesador=entrada.nextInt() ;
+        
+       Procesador prc=new Procesador(nameprocesador, ValorProcesador);
+        
+        System.out.println("Ingresar nombre de Gabinete");
+        String namegabinete=entrada.next();
+        System.out.println("ingrese valor del gabinete");
+        
+        int  ValorGabinete=entrada.nextInt();
+       Gabinete gab=new Gabinete(namegabinete, ValorGabinete);
+        
+       System.out.println("ingrese Nombre de la tarjeta de video");
+        String nametarjeta=entrada.next();
+        System.out.println("ingrese valor de la Tarjeta de video ");
+        int  ValorTarjeta=entrada.nextInt();
+     
+        TarjetaDeVideo tvideo=new TarjetaDeVideo(nametarjeta, ValorTarjeta);
+         
+        System.out.println("ingrese nombre del disco de almacenamiento");
+        String namedisc=entrada.next();
+        System.out.println("ingrese el valor  del disco de almacenamiento ");
+        int  Valordisc=entrada.nextInt();
+     
+       Almacenamiento disc=new Almacenamiento(namedisc, Valordisc);
+       
+        Computador c1=new Computador(prc, ram, gab, tvideo, disc);
+        agregarArray(c1);
+     
+          }
+      } catch (java.util.InputMismatchException e) {
+          System.out.println("Error!!!! no se ingreso  lo solicitado  ");
+     }
+         
+         
+         
+    
+    }
+     
+       
+       
+    }
+     
+   
+

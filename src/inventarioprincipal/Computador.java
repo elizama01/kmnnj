@@ -10,57 +10,63 @@ package inventarioprincipal;
  * @author Esteban
  */
 public class Computador {
-String ram,procesador,gabinete,tarjetavideo,almacenamiento;
+ Procesador p;
+     Ram r;
+     Gabinete g;
+     TarjetaDeVideo t;
+     Almacenamiento d;
     
-    public Computador() {
+    public Computador(Procesador prc,Ram ram,Gabinete gab,TarjetaDeVideo tvideo,Almacenamiento disc) {
+     p=prc;
+     r=ram;
+     g=gab;
+      t=tvideo;
+      d=disc;
     }
 
-    @Override
-    public String toString() {
-        return "computador{" + "ram=" + ram + ", procesador=" + procesador + ", gabinete=" + gabinete + ", tarjetavideo=" + tarjetavideo + ", almacenamiento=" + almacenamiento + '}';
+    public Procesador getP() {
+        return p;
     }
 
-    public String getRam() {
-        return ram;
+    public void setP(Procesador p) {
+        this.p = p;
     }
 
-    public void setRam(String ram) {
-        this.ram = ram;
+    public Ram getR() {
+        return r;
     }
 
-    public String getProcesador() {
-        return procesador;
+    public void setR(Ram r) {
+        this.r = r;
     }
 
-    public void setProcesador(String procesador) {
-        this.procesador = procesador;
+    public Gabinete getG() {
+        return g;
     }
 
-    public String getGabinete() {
-        return gabinete;
+    public void setG(Gabinete g) {
+        this.g = g;
     }
 
-    public void setGabinete(String gabinete) {
-        this.gabinete = gabinete;
+    public TarjetaDeVideo getT() {
+        return t;
     }
 
-    public String getTarjetavideo() {
-        return tarjetavideo;
+    public void setT(TarjetaDeVideo t) {
+        this.t = t;
     }
 
-    public void setTarjetavideo(String tarjetavideo) {
-        this.tarjetavideo = tarjetavideo;
+    public Almacenamiento getD() {
+        return d;
     }
 
-    public String getAlmacenamiento() {
-        return almacenamiento;
+    public void setD(Almacenamiento d) {
+        this.d = d;
     }
 
-    public void setAlmacenamiento(String almacenamiento) {
-        this.almacenamiento = almacenamiento;
-    }
+    
    
     }
     
     
-}
+
