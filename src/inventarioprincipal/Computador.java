@@ -10,18 +10,18 @@ package inventarioprincipal;
  * @author Esteban
  */
 public class Computador {
- Procesador p;
-     Ram r;
-     Gabinete g;
-     TarjetaDeVideo t;
-     Almacenamiento d;
+     private Procesador p;
+     private Ram r;
+     private Gabinete g;
+     private TarjetaDeVideo t;
+     private Almacenamiento d;
     
     public Computador(Procesador prc,Ram ram,Gabinete gab,TarjetaDeVideo tvideo,Almacenamiento disc) {
-     p=prc;
-     r=ram;
-     g=gab;
-      t=tvideo;
-      d=disc;
+    this.p=prc;
+     this.r=ram;
+     this.g=gab;
+      this.t=tvideo;
+      this.d=disc;
     }
 
     public Procesador getP() {

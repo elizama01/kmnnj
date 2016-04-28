@@ -14,10 +14,10 @@ import java.util.Scanner;
  * @author Esteban
  */
 public class Inventario {
-    ArrayList<Computador>armado;
+   private  ArrayList<Computador>armado;
   
     public Inventario() {
- armado=new ArrayList<>(armado);
+ armado=new ArrayList<Computador>(armado);
   
     }
     
