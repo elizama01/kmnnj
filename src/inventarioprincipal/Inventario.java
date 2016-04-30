@@ -15,12 +15,21 @@ import java.util.Scanner;
  */
 public class Inventario {
    private  ArrayList<Computador>armado;
+
+    @Override
+    public String toString() {
+        return "Inventario{" + "armado=" + armado + '}';
+    }
   
     public Inventario() {
- armado=new ArrayList<Computador>(armado);
+ armado=new ArrayList<Computador>();
   
     }
-    
+    public void MostrarDatos(){
+        for (int i = 0; i < armado.size(); i++) {
+            System.out.println("Los datos ingresados son "+ armado.get(i)); 
+        }
+}
     public void agregarArray(Computador c1){
         armado.add(c1);
     }
@@ -36,7 +45,7 @@ public class Inventario {
          
           for (int j = 0; j < cantidad; j++) {
               
-          System.out.println("Ingrese el computador N°"+j);
+          System.out.println("Ingrese el computador N°"+j+1);
           System.out.println("ingrese nombre de la ram");
           String nameram = entrada.next() ;
           System.out.println("ingrese valor de la ram");
@@ -74,7 +83,9 @@ public class Inventario {
        
         Computador c1=new Computador(prc, ram, gab, tvideo, disc);
         agregarArray(c1);
-     
+        MostrarDatos();
+     int suma =ram.getValor()+prc.getValor()+gab.getValor()+tvideo.getValor()+disc.getValor();
+              System.out.println("El valor del computador armado con los datos ingresados es: "+suma);
           }
       } catch (java.util.InputMismatchException e) {
           System.out.println("Error!!!! no se ingreso  lo solicitado  ");

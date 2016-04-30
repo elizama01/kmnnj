@@ -64,6 +64,11 @@ public class Computador {
         this.d = d;
     }
 
+    @Override
+    public String toString() {
+        return "Computador{" + "" + p + ", " + r + ", " + g + " " + t + " " + d + '}';
+    }
+
     
    
     }
